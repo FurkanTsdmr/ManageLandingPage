@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Landing Page</title>
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+
+<!-- Navbar
+sticky,top-0,transition-all duration-500 
+-->
+<header id="navbar" class="sticky top-0 transition-all duration-500">
+<!--TAILWINDDE container:içerikleri hazır genişlik sınıfımdır.
+içerikleri ortalar ve genişliklerini ayarlar.  -->
+    <nav class="container mx-auto p-6">
+<!-- flex,items-center,justify-between -->
+    <div class="flex items-center justify-between">
+<!-- Logo pt-2 -->
+     <div class="pt-2">
+        <img src="img/logo.svg" alt="Logo">
+     </div>
+<!-- Menu Items -->
+ <!-- hidden, md:flex,space-x-6 -->
+    <div class="hidden space-x-6 md:flex">
+        <a href="#" class="hover:text-gray-300">Pricing</a>
+        <a href="#" class="hover:text-darkGrayishBlue">Product</a>
+        <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
+        <a href="#" class="hover:text-darkGrayishBlue">Careers</a>
+        <a href="#" class="hover:text-darkGrayishBlue">Community</a>
+    </div>
+<!-- Button -->
+ <!-- hidden,p-3,px-6,pt-2,text-white,bg-....,rounded-full,
+   baseline-->
+   <a href="#"
+   class="hidden p-3 px-6 pt-2 text-white 
+   bg-brightRed rounded-full baseline hover:bg-brightRedLight
+   md:block">
+    Get Started
+   </a>
+<!-- Hamburger Icon
+block,hamburger,md:hidden, focus:outline-none
+-->
+   <button id="menu-btn" class="block hamburger 
+   md:hidden focus:outline-none">
+    <span class="hamburger-top"></span>
+    <span class="hamburger-middle"></span>
+    <span class="hamburger-bottom"></span>
+   </button>
+</div>
+<!-- Mobile Menu -->
+ <!-- 
+md:hidden
+ -->
+<div class="md:hidden">
+    <!-- absoutle,flex-col,items-center,hidden,py-8,mt-10, 
+     space-y-6 font-bold bg-white sm:w-auto sm:self-center 
+     left-6 right-6 drop-shadow-md -->
+    <div id="menu"    
+    class="absolute flex-col items-center hidden 
+    py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto 
+    sm:self-center  left-6 right-6 drop-shadow-md ">
+        <a href="#">Pricing</a>
+        <a href="#">Product</a>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Community</a>
+    </div>
+</div>
+    </nav>
+</header>
+
+<!-- ScrollAnimated
+ fixed scrollTopHide rounded-full transition-all 
+ duration-500 bg-brightRed p-4
+  -->
+ <a href="#" id="scroll-btn" class="fixed scrollTopHide
+ rounded-full transition-all duration-500 bg-brightRed p-4">TOP</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
