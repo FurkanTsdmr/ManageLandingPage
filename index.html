@@ -1,123 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Landing Page</title>
-    <link rel="stylesheet" href="css/main.css">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Manage Landing Page</title>
 </head>
+
 <body>
 
-
-<!-- Navbar
-sticky,top-0,transition-all duration-500 
--->
-<header id="navbar" class="sticky top-0 transition-all duration-500">
-<!--TAILWINDDE container:içerikleri hazır genişlik sınıfımdır.
-içerikleri ortalar ve genişliklerini ayarlar.  -->
-    <nav class="container mx-auto p-6">
-<!-- flex,items-center,justify-between -->
-    <div class="flex items-center justify-between">
-<!-- Logo pt-2 -->
-     <div class="pt-2">
-        <img src="img/logo.svg" alt="Logo">
-     </div>
-<!-- Menu Items -->
- <!-- hidden, md:flex,space-x-6 -->
-    <div class="hidden space-x-6 md:flex">
-        <a href="#" class="hover:text-gray-300">Pricing</a>
-        <a href="#" class="hover:text-darkGrayishBlue">Product</a>
-        <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
-        <a href="#" class="hover:text-darkGrayishBlue">Careers</a>
-        <a href="#" class="hover:text-darkGrayishBlue">Community</a>
-    </div>
-<!-- Button -->
- <!-- hidden,p-3,px-6,pt-2,text-white,bg-....,rounded-full,
-   baseline-->
-   <a href="#"
-   class="hidden p-3 px-6 pt-2 text-white 
-   bg-brightRed rounded-full baseline hover:bg-brightRedLight
-   md:block">
-    Get Started
-   </a>
-<!-- Hamburger Icon
-block,hamburger,md:hidden, focus:outline-none
--->
-   <button id="menu-btn" class="block hamburger 
-   md:hidden focus:outline-none">
-    <span class="hamburger-top"></span>
-    <span class="hamburger-middle"></span>
-    <span class="hamburger-bottom"></span>
-   </button>
-</div>
-<!-- Mobile Menu -->
- <!-- 
-md:hidden
- -->
-<div class="md:hidden">
-    <!-- absoutle,flex-col,items-center,hidden,py-8,mt-10, 
-     space-y-6 font-bold bg-white sm:w-auto sm:self-center 
-     left-6 right-6 drop-shadow-md -->
-    <div id="menu"    
-    class="absolute flex-col items-center hidden 
-    py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto 
-    sm:self-center  left-6 right-6 drop-shadow-md ">
-        <a href="#">Pricing</a>
-        <a href="#">Product</a>
-        <a href="#">About Us</a>
-        <a href="#">Careers</a>
-        <a href="#">Community</a>
-    </div>
-</div>
-    </nav>
-</header>
-
-<!-- ScrollAnimated
- fixed scrollTopHide rounded-full transition-all 
- duration-500 bg-brightRed p-4
+  <!-- Navbar 
+   sticky	Sayfa kaydırıldığında navbar’ı sayfanın en üstüne sabitler. 
+   (Parent'ı içinde kalır, position: sticky; eşdeğeridir.)
+top-0	Navbar’ı ekranın en üstüne hizalar (top: 0;).
+transition-all	Navbar’daki tüm özellik değişimlerini animasyonlu hale getirir (transition: all ...).
+duration-500	Geçiş (transition) süresini 0.5 saniye (500ms) yapar.
   -->
- <a href="#" id="scroll-btn" class="fixed scrollTopHide
- rounded-full transition-all duration-500 bg-brightRed p-4">TOP</a>
+  <header id="navbar" class="sticky top-0 transition-all duration-500">
+    <!-- 
+    container	Tailwind’in hazır genişlik sınıfıdır. İçeriği ortalar
+     ve belirli bir genişlik kazandırır.
+mx-auto	margin-left: auto; margin-right: auto; ile ortalar.
+p-6	Tüm kenarlara padding (24px) ekler. -->
+    <nav class="container mx-auto p-6 ">
+      <!-- Flex container -->
+       <!-- 
+      flex	İçindeki öğeleri yatayda hizalar (display: flex;).
+items-center	Öğeleri dikeyde ortalar (align-items: center;).
+justify-between	Öğeleri sağa ve sola yayarak hizalar (justify-content: space-between;). -->
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+         <!-- pt-2	Üste padding (8px) ekler. -->
+        <div class="pt-2">
+          <img src="img/logo.svg" alt="" />
+        </div>
+        <!-- Menu Items -->
+         <!-- hidden	Varsayılan olarak gizler (display: none;).
+md:flex	md (768px ve üstü) ekranlarda display: flex; yaparak menüyü görünür hale getirir.
+space-x-6	İçindeki öğeler arasına 24px boşluk ekler. (margin-right: 24px;). -->
+        <div class="hidden space-x-6 md:flex">
+          <!-- hover:text-darkGrayishBlue	Üzerine gelindiğinde (hover) yazı rengini darkGrayishBlue yapar. -->
+          <a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Product</a>
+          <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Careers</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Community</a>
+        </div>
+        <!-- Button -->
+         <!--
+        hidden	Mobilde gizli (display: none;).
+p-3	Tüm kenarlara 12px padding ekler.
+px-6	Yatayda 24px padding ekler.
+pt-2	Üst tarafa 8px padding ekler.  -->
+        
+        <a href="#"
+          class="hidden p-3 px-6 pt-2 text-white 
+          bg-brightRed rounded-full baseline 
+          hover:bg-brightRedLight md:block">Get
+          Started</a>
+        <!-- Hamburger Icon-->
+         <!-- 
+        block	Varsayılan olarak display: block; yapar.
+md:hidden	md (768px üstü) ekranlarda gizler.
+focus:outline-none	Tıklanınca varsayılan mavi çerçeveyi kaldırır. -->
+        <button id="menu-btn" class="block hamburger 
+        md:hidden focus:outline-none">
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <!-- 
+        absolute	Sayfa içindeki konumunu bağımsız olarak ayarlar (position: absolute;).
+flex-col	Flex öğelerini dikey hizalar (flex-direction: column;).
+items-center	Öğeleri yatayda ortalar (align-items: center;).
+hidden	Varsayılan olarak gizli (display: none;).
+self-end	Menü öğelerini sağa hizalar.
+py-8	Üst ve alt 32px padding ekler.
+mt-10	Üstten 40px boşluk bırakır.
+space-y-6	Menü öğeleri arasına 24px boşluk ekler.
+font-bold	Yazıları kalın yapar.
+bg-white	Arka planı beyaz yapar.
+sm:w-auto	Küçük ekranlarda genişliği içeriğe göre belirler (width: auto;).
+sm:self-center	Küçük ekranlarda ortalar.
+left-6 right-6	Menü sağdan ve soldan 24px boşluk bırakır.
+drop-shadow-md	Hafif bir gölge efekti verir. -->
+        <div id="menu"
+          class="absolute flex-col items-center hidden self-end 
+          py-8 mt-10 space-y-6 font-bold bg-white 
+          sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+          <a href="#">Pricing</a>
+          <a href="#">Product</a>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Community</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- 
+  fixed	Sayfa kaydırıldığında sabit kalır (position: fixed;).
+scrollTopHide	Özel bir sınıf, muhtemelen sayfa kaydırıldığında butonu gizlemek için kullanılıyor.
+rounded-full	Butonu yuvarlak yapar.
+transition-all	Geçiş efektlerini tüm özelliklere uygular.
+duration-500	Geçiş süresi 0.5 saniye (500ms).
+bg-brightRed	Arka plan rengini kırmızı yapar.
+p-4	Tüm kenarlara 16px padding ekler. -->
+  <a id="scroll-btn" class="fixed scrollTopHide 
+  rounded-full transition-all duration-500 bg-brightRed p-4"
+    href="#">TOP</a>
+  <!-- Hero Section -->
+
+  <section id="hero">
+    <!-- 
+    Bu div, sayfadaki içerikleri düzenlemek için bir kapsayıcı (
+    container) görevi görüyor.
+
+🚀 Kullanılan Tailwind Sınıfları:
+container: İçeriği belirli bir genişlikte tutarak, sayfanın her 
+boyutta güzel görünmesini sağlar.
+flex: Flexbox özelliğini aktif eder (Öğeler yan yana veya alt alta dizilebilir).
+flex-col-reverse: Küçük ekranlarda (varsayılan olarak) i
+çeriği sütun halinde ve ters sıralı gösterir.
+items-center: İçeriği dikey olarak ortalar.
+px-6: Yatayda (sağ ve sol) 6 birim iç boşluk (padding) ekler.
+mx-auto: Ortalar (auto margin sayesinde).
+mt-10: Üstten 10 birim boşluk bırakır.
+space-y-0: Çocuk öğeler arasında boşluk bırakmaz.
+md:space-y-0: Orta ve büyük ekranlarda (md) da boşluk bırakmamasını sağlar.
+md:flex-row: Orta ve büyük ekranlarda içeriği yatay (satır şeklinde) dizer. -->
+    <!-- Flex Container -->
+    <div class="container flex flex-col-reverse 
+    items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row">
+    <!-- 
+    Bu div, metin içeriğini düzenler.
+
+🚀 Kullanılan Tailwind Sınıfları:
+flex: Flexbox özelliğini açar.
+flex-col: Küçük ekranlarda içeriği dikey sıralar.
+mb-32: Alt tarafa 32 birim boşluk bırakır.
+space-y-12: İçindeki öğeler arasına 12 birim boşluk ekler.
+md:w-1/2: Orta ve büyük ekranlarda genişliği %50 yapar.
+ -->
+      <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
+        <!-- <h1 class="max-w-md text-4xl font-bold text-center 
+         md:text-5xl md:text-left">
+Bu, başlık (h1) etiketi. Burada yazı boyutu, hizalama ve genişlik ayarlanıyor.
+
+🚀 Kullanılan Tailwind Sınıfları:
+max-w-md: Maksimum genişliği orta boyutlu (md) bir genişlikte tutar.
+text-4xl: Küçük ekranlarda yazı boyutunu 4xl yapar.
+font-bold: Kalın yazı yapar.
+text-center: Metni ortalar.
+md:text-5xl: Orta ve büyük ekranlarda yazı boyutunu 5xl yapar.
+md:text-left: Orta ve büyük ekranlarda metni sola hizalar.
+ -->
+        <h1 class="max-w-md text-4xl font-bold 
+        text-center md:text-5xl md:text-left">
+          Bring everyone together to build better products
+        </h1>
+        <!-- 
+        <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
+Bu, bir açıklama paragrafı. Burada renk, hizalama ve genişlik belirlenmiş.
+
+🚀 Kullanılan Tailwind Sınıfları:
+max-w-sm: Paragrafın genişliğini küçük ekranlarda sm boyutuna ayarlar.
+text-center: Metni ortalar.
+text-darkGrayishBlue: Yazı rengini darkGrayishBlue yapar 
+(bu özel bir renk tanımlaması olabilir).
+md:text-left: Orta ve büyük ekranlarda metni sola hizalar. -->
+        <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
+          Manage makes it simple for software teams to plan day-to-day tasks
+          while keeping the larger team goals in view.
+        </p>
+        <!-- 
+        , butonu içeren div. Butonun konumunu kontrol eder.
+
+🚀 Kullanılan Tailwind Sınıfları:
+flex: Flexbox kullanır.
+justify-center: Küçük ekranlarda içeriği ortalar.
+md:justify-start: Orta ve büyük ekranlarda içeriği sola hizalar. -->
+        <div class="flex justify-center md:justify-start">
+          <!-- 
+          Bu, bir buton olarak kullanılan bağlantı (<a> etiketi).
+
+🚀 Kullanılan Tailwind Sınıfları:
+p-3: Tüm kenarlardan 3 birim iç boşluk ekler.
+px-6: Sağ ve sol kenarlardan 6 birim boşluk ekler.
+pt-2: Üst taraftan 2 birim boşluk ekler.
+text-white: Yazıyı beyaz yapar.
+bg-brightRed: Arka planı kırmızı yapar (bu özel tanımlanmış bir renk olabilir).
+rounded-full: Köşeleri tamamen yuvarlak yapar.
+hover:bg-brightRedLight: Üzerine gelindiğinde arka plan rengini brightRedLight yapar.
+ -->
+          <a href="#" class="p-3 px-6 pt-2 text-white
+           bg-brightRed rounded-full 
+           baseline hover:bg-brightRedLight">GetStarted</a>
+        </div>
+      </div>
+      <!-- u div, resmi içeren alan.
+
+🚀 Kullanılan Tailwind Sınıfları:
+md:w-1/2: Orta ve büyük ekranlarda genişliği %50 yapar. -->
+<!-- 
+div (md:w-1/2) → 
+Orta ve büyük ekranlarda (md) genişliğin yarısını (1/2) kaplamasını sağlar. -->
+      <div class="md:w-1/2">
+        <img src="img/illustration-intro.svg" alt="illustration-intro" />
+      </div>
+    </div>
+  </section>
+
+<!-- Features Section -->
+ <!-- 
+ -->
+<section id="features">
+  <!-- Flex container -->
+   <!-- 
+  <section id="features"> → "features" bölümü olarak tanımlanıyor.
+container → Varsayılan genişlik ayarlarını uygulayan bir Tailwind sınıfı.
+flex flex-col → Elemanları dikey hizalar (flex-col).
+px-4 → Sağ ve sol taraftan 4 birim boşluk.
+mx-auto → Ortalamak için auto marjin uygular.
+mt-10 → Üst taraftan 10 birim boşluk.
+space-y-12 → Çocuk elemanlar arasında 12 birim dikey boşluk.
+md:space-y-0 md:flex-row → Orta (md) ekranlardan 
+itibaren boşluğu sıfırlar ve öğeleri yatay hizalar. -->
+  <div class="container flex flex-col px-4 mx-auto 
+  mt-10 space-y-12 md:space-y-0 md:flex-row">
+    <!-- What's Different -->
+     <!-- 
+    flex flex-col → Elemanları dikey sıralar.
+space-y-12 → Öğeler arasında 12 birim boşluk bırakır.
+md:w-1/2 → Orta ve büyük ekranlarda genişliği %50 yapar. -->
+    <div class="flex flex-col space-y-12 md:w-1/2">
+      <!-- 
+      Başlık (h2):
+max-w-md → Maksimum genişliği md boyutunda sınırlar.
+text-4xl font-bold → Yazı boyutu 4xl ve kalın (bold).
+text-center md:text-left → Küçük ekranlarda ortalar, büyük ekranlarda sola yaslar. -->
+      <h2 class="max-w-md text-4xl 
+      font-bold text-center md:text-left">
+        What's different about Manage?
+      </h2>
+      <!-- 
+      Paragraf (p):
+max-w-sm → Maksimum genişliği sm olarak sınırlandırır.
+text-darkGrayishBlue → Yazıyı koyu gri yapar.
+text-center md:text-left → Küçük ekranlarda ortalar, büyük ekranlarda sola hizalar. -->
+      <p class="max-w-sm text-center 
+      text-darkGrayishBlue md:text-left">
+        Manage provides all the functionality your team needs, without the
+        complexity. Our software is tailor-made for modern digital product
+        teams.
+      </p>
+    </div>
+
+    <!-- Numbered List -->
+     <!-- 
+    Genel Yapı:
+flex flex-col → Küçük ekranlarda dikey hizalar.
+md:space-y-0 md:space-x-6 md:flex-row → Büyük ekranlarda yatay sıralar.
+Numara (div.px-4 py-2 text-white bg-brightRed rounded-full) → 
+Yuvarlak arka planlı kırmızı numara.
+Başlık (h3):
+Küçük ekranda gizlenmez (md:hidden).
+Büyük ekranda gizlenir (hidden).
+Aynı yapı 2. ve 3. liste elemanları için tekrarlanıyor. -->
+    <div class="flex flex-col space-y-8 md:w-1/2">
+      <!-- List Item 1 -->
+      <div class="flex flex-col space-y-3 md:space-y-0
+       md:space-x-6 md:flex-row">
+        <!-- Heading -->
+        <div class="rounded-l-full bg-brightRedSupLight
+         md:bg-transparent">
+          <div class="flex items-center space-x-2">
+            <div class="px-4 py-2 text-white rounded-full
+             md:py-1 bg-brightRed">
+              01
+            </div>
+            <h3 class="text-base font-bold md:mb-4 md:hidden">
+              Track company-wide progress
+            </h3>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="hidden mb-4 text-lg font-bold md:block">
+            Track company-wide progress
+          </h3>
+          <p class="text-darkGrayishBlue">
+            See how your day-to-day tasks fit into the wider vision. Go from
+            tracking progress at the milestone level all the way down to the
+            smallest of details. Never lose sight of the bigger picture
+            again.
+          </p>
+        </div>
+      </div>
+
+      <!-- List Item 2 -->
+      <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6
+       md:flex-row
+        ">
+        <!-- Heading -->
+        <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
+            <div class="flex items-center space-x-2">
+              <div class="px-4 py-2 text-white rounded-full
+                md:py-1 bg-brightRed">
+                02
+              </div>
+              <h3 class="text-base font-bold md:mb-4 md:hidden">
+                Advanced Built-in Reports
+              </h3>
+            </div>
+
+        </div>
+
+        <div>
+          <h3 class="hidden mb-4 text-lg font-bold md:block">
+            Advanced Built-in Reports
+          </h3>
+          <p class="text-darkGrayishBlue">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Ratione blanditiis quis accusantium? Quaerat, facere.
+             Reiciendis eligendi voluptates iusto consequatur cumque.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- List Item 3 -->
+       <div class="flex flex-col space-y-3 md:space-y-0 
+        md:space-x-6 md:flex-row">
+        <!-- Heading -->
+         <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
+          <div class="flex items-center space-x-2">
+            <div class="px-4 text-white rounded-full md:py-1 bg-brightRed">
+              03
+            </div>
+            <h3 class="text-base font-bold md:mb-4 md:hidden">
+              Everything yout need in one place
+            </h3>
+          </div>
+         </div>
+
+         <div>
+            <h3 class="hidden mb-4 text-lg font-bold md:block">
+              Everything yout need in one place
+            </h3>
+            <p class=" text-darkGrayishBlue">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+              Ratione blanditiis quis accusantium? Quaerat, facere.
+               Reiciendis eligendi voluptates iusto consequatur cumque.
+            </p>
+         </div>
+        
+       </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <!-- 
+  max-w-6xl → Maksimum genişliği büyük (6xl).
+text-4xl font-bold → Büyük, kalın yazı.
+text-center → Ortalanmış başlık. -->
+  <!-- Container Heading -->
+   <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
+    <h2 class="text-4xl font-bold text-center">
+      What's Different About Manage?
+    </h2>
+    <!-- Testimonials Container -->
+     <!-- 
+    flex flex-col items-center → Kartları dikey hizalar, ortalar.
+p-6 space-y-6 rounded-lg bg-veryLightGray w-96 → İç boşluk, 
+yuvarlatılmış kenarlar, gri arka plan ve sabit genişlik (w-96).
+hidden → Başlangıçta gizli, JavaScript ile gösterilecek.
+Aynı yapı diğer referanslar için tekrarlanıyor. -->
+     <div class="flex flex-col justify-center mt-24 
+     md:flex-row md:space-x-6">
+        <!-- Testimonials 1 -->
+        <div class="testimonial hidden flex-col 
+        items-center p-6 space-y-6 rounded-lg bg-veryLightGray w-96">
+          <img src="img/avatar-anisha.png" class="w-16 -mt-14" alt="" />
+          <h5 class="text-lg font-bold">Anisha Li</h5>
+          <p class="text-sm text-darkGrayishBlue">
+            “Manage has supercharged our team’s workflow. The ability to
+            maintain visibility on larger milestones at all times keeps
+            everyone motivated.”
+          </p>
+        </div>
+          <!-- Testiomials 2 -->
+          <div class="testimonial hidden flex-col items-center 
+          p-6 space-y-6 rounded-lg bg-veryLightGray w-96">
+            <img src="img/avatar-ali.png" class="w-16 -mt-14" alt="" />
+            <h5 class="text-lg font-bold">Ali Bravo</h5>
+            <p class="text-sm text-darkGrayishBlue">
+              “We have been able to cancel so many other subscriptions since
+              using Manage. There is no more cross-channel confusion and
+              everyone is much more focused.”
+            </p>
+          </div>
+        <!-- Testimonials 3 -->
+        <div class="testimonial hidden flex-col items-center 
+        p-6 space-y-6 rounded-lg bg-veryLightGray w-96">
+          <img src="img/avatar-richard.png" class="w-16 -mt-14" alt="" />
+          <h5 class="text-lg font-bold">Richard Watts</h5>
+          <p class="text-sm text-darkGrayishBlue">
+            “Manage has supercharged our team’s workflow. The ability to
+            maintain visibility on larger milestones at all times keeps
+            everyone motivated.”
+          </p>
+        </div>
+      </div>
+      <button id="testimonialBtn">Next</button>
+        <!-- Button -->
+      <div class="my-16">
+        <a href="#" class="p-3 px-6 pt-2 text-white 
+        bg-brightRed rounded-full baseline hover:bg-brightRedLight">Get
+          Started</a>
+      </div>
+    </section>
+<!-- 
+    Kırmızı arka plan (bg-brightRed)
+Esnek hizalama (flex flex-col items-center)
+Orta ekranda (md:flex-row) yatay hizalama -->
+<section id="cta" class="bg-brightRed">
+  <!-- Flex Container -->
+  <div class="container flex flex-col items-center justify-between px-6
+     py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+     <!-- text-5xl font-bold text-white → Büyük, beyaz ve kalın yazı.
+text-center md:text-left → Küçük ekranda ortalanmış, büyük ekranda sola yaslanmış. -->
+   <h2 class="text-5xl font-bold text-center text-white md:text-4xl 
+      md:max-w-xl md:text-left"> 
+      Simplify how your team works today
+    </h2>
+    <!-- Button -->
+     <div>
+        <a href="#" class="p-3 px-6 pt-2 text-brightRed bg-white 
+            rounded-full shadow-2xl baseline hover:bg-gray-900">Get Started</a>
+     </div>
+  </div>
+</section>
+
+<!-- Footer -->
+ <footer class="bg-veryDarkBlue">
+    <!-- Flex Container -->
+     <!-- 
+    Bu <div> etiketi, web sitesinin alt kısmındaki 
+      tüm içerikleri içine alan ana kapsayıcıdır.
+
+container → İçeriği belirli bir genişlikte ortalar.
+flex → İçindeki elemanları yan yana veya alt alta düzenlemeye yarar.
+flex-col-reverse → İçindeki elemanları dikey olarak ve ters sırayla yerleştirir.
+justify-between → İçerikler arasına eşit boşluk bırakır.
+px-6 py-10 → İçeriğe sağ-sol (px-6) ve üst-alt (py-10) boşluk ekler.
+mx-10 mx-auto → Dışarıdan sağ-sol boşluk (mx-10) ekler, mx-auto ile ortalar.
+space-y-8 → İçindeki elemanlar arasına dikey (y) boşluk ekler.
+md:flex-row md:space-y-0 → Orta ve büyük ekranlarda (md:)
+ elemanları yan yana dizer (flex-row) ve dikey boşluğu kaldırır. -->
+     <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-10
+          mx-auto space-y-8 md:flex-row md:space-y-0">
+      <!--Logo And Sosyal Medya Linkleri  -->
+      <!-- 
+      Bu <div>, logoyu ve sosyal medya linklerini içeren bölümdür.
+
+flex flex-col-reverse → Elemanları dikey olarak (alt alta) ve ters sırayla dizer.
+items-center → İçeriği yatay olarak merkeze alır.
+justify-between → İç elemanları dikey olarak en üste ve en alta koyar.
+space-y-12 → İç elemanlar arasında dikey boşluk bırakır.
+md:flex-col md:space-y-0 md:items-start → Orta ve büyük ekranlarda normal 
+sıralamaya döndürür ve dikey boşluğu kaldırır.
+       -->
+      <div class="flex flex-col-reverse items-center justify-between
+            space-y-12 md:flex-col md:space-y-0 md:items-start">
+            <!-- Telif Hakkı -->
+             <!-- 
+            mx-auto → Yatay olarak ortalar.
+my-6 → Üst ve alt boşluk ekler.
+text-center → Metni ortalar.
+text-white → Metnin rengini beyaz yapar.
+md:hidden → Orta ve büyük ekranlarda görünmemesini sağlar. -->
+            <div class="mx-auto my-6 text-center text-white md:hidden">
+              Copyright &copy; 2024, All Rights Reserved
+            </div>
+            <!-- Logo -->
+             <!-- 
+            img etiketi, logosu olan bir resim ekler.
+h-8 → Resmin yüksekliğini 8 birim yapar.
+alt="Logo" → Görme engelli kullanıcılar için resmin alternatif açıklamasıdır. -->
+          <div>
+            <img src="img/logo-white.svg" class="h-8" alt="Logo">
+          </div>
+          <!-- Sosyal Medya Linkleri -->
+           <!-- 
+          flex → Linkleri yatay sıraya dizer.
+justify-center → Linkleri yatayda ortalar.
+space-x-4 → Linkler arasında yatay boşluk bırakır. -->
+           <div class="flex justify-center space-x-4">
+            <!-- Link1 -->
+              <a href="#">
+                <!-- 
+                h-8 → Resmin yüksekliği 8 birimdir. -->
+                <img src="img/icon-facebook.svg" class="h-8" alt="Facebook Logo">
+              </a>
+              <!-- Link 2 -->
+              <a href="#">
+                <img src="img/icon-youtube.svg" class="h-8" alt="Youtube Logo">
+              </a>
+               <!-- Link 3 -->
+               <a href="#">
+                <img src="img/icon-twitter.svg" class="h-8" alt="Twitter Logo">
+              </a>
+                <!-- Link 4 -->
+                <a href="#">
+                  <img src="img/icon-pinterest.svg" class="h-8" alt="Pinterest Logo">
+                </a>
+                 <!-- Link 5 -->
+                 <a href="#">
+                  <img src="img/icon-instagram.svg" class="h-8" alt="Instagram Logo">
+                </a>
+           </div>
+
+      </div>
+      <!-- Liste Conteiner Yapısı -->
+       <!-- 
+      flex → Linkleri yatay sıraya dizer.
+justify-around → Linkleri yatayda eşit boşluklarla dağıtır.
+space-x-32 → Link grupları arasında geniş bir boşluk bırakır. -->
+      <div class="flex justify-around space-x-32">
+        <!-- 
+        flex flex-col → Linkleri dikey sıralar.
+space-y-3 → Linkler arasında dikey boşluk bırakır.
+text-white → Yazıları beyaz yapar.
+hover:text-brightRed → Üzerine gelince kırmızı olur. -->
+          <div class="flex flex-col space-y-3 text-white ">
+            <a href="#" class="hover:text-brightRed">Home</a>
+            <a href="#" class="hover:text-brightRed">Pricing</a>
+            <a href="#" class="hover:text-brightRed">Products</a>
+            <a href="#" class="hover:text-brightRed">About</a>
+          </div>
+
+      </div>
+      <div class="flex flex-col space-y-3 text-white">
+        <a href="#" class="hover:text-brightRed">Careers</a>
+        <a href="#" class="hover:text-brightRed">Community</a>
+        <a href="#" class="hover:text-brightRed">Privacy Policy</a>
+      </div>
+
+
+      <!-- Input Container -->
+       <!-- 
+      input type="text" → Kullanıcının e-posta girmesi için bir kutu.
+flex-1 → Kutu mümkün olduğunca genişler.
+rounded-full → Kenarlarını yuvarlak yapar.
+placeholder="Updated in your box" → Kullanıcının ne yapması gerektiğini gösterir.
+button → Kullanıcının abonelik işlemini başlatması için bir düğme.
+bg-brightRed hover:bg-brightRedLight → 
+Buton kırmızı, üzerine gelince daha açık kırmızı olur. -->
+      <div class="flex flex-col justify-between">
+        <form>
+          <div class="flex space-x-3">
+            <input type="text" class="flex-1 px-4 rounded-full 
+            focus:outline-none" placeholder="Updated in your box" />
+            <button class="px-6 py-2 text-white rounded-full 
+            bg-brightRed hover:bg-brightRedLight focus:outline-none">
+              Go
+            </button>
+          </div>
+        </form>
+        <div class="hidden text-white md:block">
+          Copyright &copy; 2024, All Rights Reserved
+        </div>sc
+
+      </div>
+
+
+     </div>
 
 
 
+ </footer>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.tailwindcss.com"></script>
+ <script src="js/script.js"></script>
 </body>
+
 </html>
